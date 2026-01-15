@@ -72,10 +72,13 @@ class GridDataModule(L.LightningDataModule):
         
         if self.mode == 'f':
             required_files.append('focal.npy')
-        elif self.mode == 'h' or self.mode == 'nastar':
+        elif self.mode == 'h':
             required_files.append('abs.npy')
         elif self.mode == 'cf':
             required_files.append('cf.npy')
+        elif self.mode == 'nastar':
+            required_files.append('abs.npy')
+        
         else:
             raise ValueError(f"Unknown mode: {self.mode}")
         

@@ -31,7 +31,7 @@ class GridDataset(Dataset):
 
         
         # Select ground truth file based on mode
-        file_gt = {'f': 'focal.npy', 'h': 'abs.npy', 'cf': 'cf.npy'}[mode]
+        file_gt = {'f': 'focal.npy', 'h': 'abs.npy', 'cf': 'cf.npy', 'nastar': 'abs.npy'}[mode]
         self.gt_values = np.load(os.path.join(path, file_gt), mmap_mode='c')
       
     def __getitem__(self, idx: int) -> Tuple[torch.Tensor, torch.Tensor, 
